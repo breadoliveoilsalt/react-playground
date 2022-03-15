@@ -16,18 +16,9 @@ const App = () => {
 
   return (
     <>
-      <button onClick={() => setHelloColor('magenta')} >
-        Hello Magenta
-      </button>
-
-      <button onClick={() => setHelloColor('yellow')} >
-        Hello Yellow
-      </button>
-
-      <button onClick={() => setHelloColor('purple')} >
-        Hello Purple
-      </button>
-
+      <HelloColorMenu
+        setHellowColor={setHelloColor}
+      />
       <Hello
         color={helloColor}
         hairStyle={'Yellow'}
@@ -39,6 +30,25 @@ const App = () => {
 
     </>
   );
+}
+
+const HelloColorMenu = (props) => {
+  return (
+    <>
+      <button onClick={() => props.setHellowColor('magenta')} >
+        Hello Magenta
+      </button>
+
+      <button onClick={() => props.setHellowColor('yellow')} >
+        Hello Yellow
+      </button>
+
+      <button onClick={() => props.setHellowColor('purple')} >
+        Hello Purple
+      </button>
+    </>
+  )
+
 }
 
 const Hello = (props) => {
